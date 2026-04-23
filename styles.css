@@ -1,0 +1,491 @@
+/* ========================================
+   VARIABLES DE IDENTIDAD (BRANDBOARD)
+   ======================================== */
+
+:root {
+  --dark-green: #052b2b;
+  --turquoise: #33e2d6;
+  --saffron: #e3c530;
+  --princess-perf: #f48dec;
+  --white: #ffffff;
+  --black: #0d0d0d;
+  --font-main: "League Spartan", sans-serif;
+  --font-body: "Roboto", sans-serif;
+  --font-accent: "Amsterdam Bright", cursive;
+  --font-code: "Fira Code", monospace;
+}
+
+/* ========================================
+   RESET & FIX DE FONDO (SOLUCIÓN PANTALLA VERDE)
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--dark-green);
+  color: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* CORRECCIÓN DE SERVIDOR: 
+  Se reemplazó el espacio por un guion en el nombre del archivo.
+  Asegúrate de renombrar el archivo en tu servidor a "fondo-isometrico19.png"
+*/
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("fondo isometrico19.webp");
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  will-change: transform;
+}
+
+/* ========================================
+   ENCABEZADOS Y CONTRASTE (HEADLINES)
+   ======================================== */
+
+h2 {
+  font-family: var(--font-main);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 0.9;
+}
+
+.multimedia-section h2,
+.prog-section h2,
+.post-section h2 {
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--white);
+}
+
+.saffron-text {
+  color: var(--saffron);
+}
+
+.pink {
+  color: var(--princess-perf);
+}
+
+.slider-header {
+  padding: 0 10% 30px 10%;
+  width: 100%;
+}
+
+/* ========================================
+   BLOQUE 1: HERO (VIDEO)
+   ======================================== */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 43, 43, 0.65);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-family: var(--font-main);
+  font-size: clamp(3.5rem, 12vw, 8.5rem);
+  line-height: 0.8;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.hero h1 span {
+  color: var(--saffron);
+}
+
+/* Ajuste de Distancia y Tamaño del Accent Text */
+.accent-text {
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  color: var(--turquoise);
+  margin-top: -10px; 
+  position: relative;
+  z-index: 2;
+}
+
+.nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-bar.sticky {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  background: var(--dark-green);
+  padding: 15px;
+  border-bottom: 1px solid var(--turquoise);
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ========================================
+   SECCIONES Y LAYOUTS
+   ======================================== */
+
+.section {
+  padding: 120px 8%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-center {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--dark-green);
+}
+
+.bg-turquoise {
+  background-color: rgba(51, 226, 214, 0.95);
+  color: var(--dark-green);
+}
+
+/* --- MOTION --- */
+
+.dual-video {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.v-box {
+  width: 100%;
+  background: var(--dark-green);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.v-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ========================================
+   GAMING HUB & CAROUSELES
+   ======================================== */
+
+.multimedia-section {
+  background-color: rgba(13, 13, 13, 0.85);
+  padding: 100px 0;
+}
+
+.sub-gaming-section {
+  margin-bottom: 80px;
+  width: 100%;
+  padding: 0 10%;
+}
+
+.sub-title {
+  text-align: left;
+  font-family: var(--font-main);
+  color: var(--turquoise);
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.slider-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0 10px 0;
+  scrollbar-width: none;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Altura fija, anchura auto, object-fit contain */
+.slide-item {
+  flex: 0 0 auto;
+  height: 320px; 
+  width: auto;   
+  background: transparent; 
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-section .slide-item {
+  height: 500px;
+  width: auto;
+}
+
+.slide-item img {
+  width: auto;
+  height: 100%;
+  object-fit: contain; 
+}
+
+/* Sistema de puntos para carrusel */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.scroll-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-dot.active {
+  background: var(--turquoise);
+}
+
+/* ========================================
+   SOCIAL MEDIA (ALTO CONTRASTE)
+   ======================================== */
+
+.post-section {
+  background-color: rgba(5, 43, 43, 0.92);
+  padding: 100px 0;
+}
+
+/* ========================================
+   BLOQUE DEV & ASESORÍA
+   ======================================== */
+
+.prog-section {
+  background-color: rgba(8, 26, 26, 0.95);
+  padding: 100px 8%;
+}
+
+.code-window {
+  background: #0d0d0d;
+  border-radius: 12px;
+  border: 1px solid rgba(51, 226, 214, 0.2);
+  margin-top: 40px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.code-header {
+  background: #1a1a1a;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.file-name {
+  color: #888;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  margin-left: 10px;
+}
+
+.code-body {
+  padding: 30px;
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d4d4d4;
+}
+
+.code-comment { color: #6a9955; }
+.code-keyword { color: #569cd6; }
+.code-func { color: #dcdcaa; }
+.code-string { color: #ce9178; }
+
+.docencia-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--dark-green);
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-radius: 20px;
+  border-left: 20px solid var(--princess-perf);
+}
+
+/* ========================================
+   CONTACTO (TURQUESA + FORMULARIO)
+   ======================================== */
+
+#contacto {
+  background-color: rgba(51, 226, 214, 0.85);
+  padding: 120px 8%;
+}
+
+.ws-container h2 {
+  color: var(--dark-green);
+  text-shadow: none;
+}
+
+.ws-input {
+  width: 100%;
+  padding: 22px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid transparent;
+  color: var(--dark-green);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.ws-btn {
+  width: 100%;
+  padding: 22px;
+  background: var(--dark-green);
+  color: var(--turquoise);
+  border: none;
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+.ws-btn:hover {
+  background: var(--black);
+  transform: translateY(-5px);
+}
+
+footer {
+  background-color: var(--saffron);
+  color: var(--dark-green);
+  font-family: var(--font-body);
+  text-align: center;
+  padding: 20px;
+}
+
+/* ========================================
+   REVEAL Y RESPONSIVO
+   ======================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .docencia-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nav-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 15px;
+  }
+
+  .nav-bar a {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+
+  .accent-text {
+    font-size: 2.2rem;
+    margin-top: 5px; 
+  }
+
+  body::before {
+    background-attachment: scroll;
+  }
+}
