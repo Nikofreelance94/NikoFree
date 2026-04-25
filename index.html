@@ -22,14 +22,10 @@
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
 
     <link 
-      rel="preload" 
-      as="style" 
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=League+Spartan:wght@700;900&family=Roboto:wght@300;400;700&display=swap" 
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <link 
-      rel="preload" 
-      as="style" 
       href="https://fonts.cdnfonts.com/css/amsterdam-bright-2" 
       onload="this.onload=null;this.rel='stylesheet'"
     />
@@ -49,7 +45,7 @@
 
   <body>
     <header class="hero">
-      <video autoplay muted loop playsinline class="hero-video" poster="fondo-hero-estatico.webp">
+      <video aria-hidden="true" autoplay muted loop playsinline class="hero-video" poster="fondo-hero-estatico.webp">
         <source src="Patron Animado.webm" type="video/mp4" />
         Tu navegador no soporta videos.
       </video>
@@ -86,22 +82,24 @@
           <div class="grid-3">
             <div class="card reveal">
               <iframe
-                title="Proyecto de Branding Bituci en Behance"
+                title="Proyecto de Identidad Visual en Behance"
                 src="https://www.behance.net/embed/project/110372829?ilo0=1"
                 height="316"
                 width="100%"
                 allowfullscreen
-                lazyload
+                loading="lazy"
                 frameborder="0"
               ></iframe>
             </div>
 
             <div class="card reveal">
-              <iframe src="https://www.behance.net/embed/project/146790163?ilo0=1"
+              <iframe
+                title="Proyecto de Identidad Visual en Behance"
+                src="https://www.behance.net/embed/project/146790163?ilo0=1"
                 height="316"
                 width="100%"
                 allowfullscreen
-                lazyload
+                loading="lazy"
                 frameborder="0"
                 ></iframe>
             </div>
@@ -113,7 +111,7 @@
                 loading="lazy"height="316"
                 width="100%"
                 allowfullscreen
-                lazyload
+                loading="lazy"
                 frameborder="0"
               ></iframe>
             </div>
@@ -134,7 +132,7 @@
             </div>
 
            <div class="slide-item vertical">
-  <video 
+  <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
     muted 
@@ -207,7 +205,7 @@
             <h3 class="sub-title">Stream Assets & Animation Packs </h3> 
             <div class="slider-wrapper">
               <div class="slide-item vertical">
-  <video 
+  <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
     muted 
@@ -224,7 +222,7 @@
               <div class="slide-item vertical">
                 <img loading="lazy" decoding="async" width="320" height="320" alt="Post 1" src="https://i.ibb.co/HkCfLSY/515014608-24447843148178045-7672974596044860603-n.jpg" />
               </div<div class="slide-item vertical">
-  <video 
+  <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
     muted 
@@ -245,7 +243,7 @@
                 <img loading="lazy" decoding="async" width="320" height="320" alt="Post 3" src="https://i.ibb.co/nsTf4DKg/Portada-Facebook.jpg" />
               </div>
               <div class="slide-item vertical">
-  <video 
+  <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
     muted 
