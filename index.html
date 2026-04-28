@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Niko Freelance | Partner Creative</title>
-     <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
     
     <link rel="apple-touch-icon" href="favicon-apple.png" />
     
@@ -12,19 +12,13 @@
     <meta property="og:url" content="https://niko-freelance.vercel.app/" />
     <meta property="og:title" content="Niko Freelance | Partner Creative" />
     <meta property="og:description" content="Diseñador visual especializado en Branding, Motion Graphics y Desarrollo Web. Ecosistemas digitales con fundamento técnico." />
-    <meta property="og:image" content="portadaWeb.webp
-      " />
-    <meta
-      name="description"
-      content="Diseñador visual especializado en Branding, Motion Graphics y Desarrollo Web. Ecosistemas digitales con fundamento técnico."
-    />
-    <meta
-      name="keywords"
-      content="Diseño Gráfico, Freelance, Branding Gaming, Motion Graphics, Bogotá, Desarrollo Web"
-    />
+    <meta property="og:image" content="portadaWeb.webp" />
+    
+    <meta name="description" content="Diseñador visual especializado en Branding, Motion Graphics y Desarrollo Web. Ecosistemas digitales con fundamento técnico." />
+    <meta name="keywords" content="Diseño Gráfico, Freelance, Branding Gaming, Motion Graphics, Bogotá, Desarrollo Web" />
     <meta name="author" content="Niko Freelance" />
     
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
 
@@ -58,7 +52,7 @@
   <body>
     <header class="hero">
       <video aria-hidden="true" autoplay muted loop playsinline class="hero-video" poster="fondo-hero-estatico.webp">
-        <source src="Patron Animado.webm" type="video/mp4" />
+        <source src="patron-animado.webm" type="video/webm" />
         Tu navegador no soporta videos.
       </video>
 
@@ -120,7 +114,7 @@
               <iframe
                 title="Proyecto de Branding salyluz en Behance"
                 src="https://www.behance.net/embed/project/83878195?ilo0=1"
-                loading="lazy"height="316"
+                height="316"
                 width="100%"
                 allowfullscreen
                 loading="lazy"
@@ -143,7 +137,7 @@
               <div class="play-btn"></div>
             </div>
 
-           <div class="slide-item vertical">
+            <div class="slide-item vertical">
   <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
@@ -233,7 +227,8 @@
 </div>
               <div class="slide-item vertical">
                 <img loading="lazy" decoding="async" width="320" height="320" alt="Post 1" src="https://i.ibb.co/HkCfLSY/515014608-24447843148178045-7672974596044860603-n.jpg" />
-              </div<div class="slide-item vertical">
+              </div>
+              <div class="slide-item vertical">
   <video  aria-hidden="true"
     loading="lazy" 
     autoplay 
@@ -278,7 +273,7 @@
             </div>
           </div>
 
-         
+          
       </section>
 
       <section class="post-section" id="social-content">
@@ -557,6 +552,7 @@
     <script>
       const reveals = document.querySelectorAll(".reveal");
 
+      // Optimizamos el evento scroll con { passive: true }
       window.addEventListener("scroll", () => {
         reveals.forEach((el) => {
           if (el.getBoundingClientRect().top < window.innerHeight - 100)
@@ -567,7 +563,7 @@
         if (window.scrollY > window.innerHeight - 80)
           nav.classList.add("sticky");
         else nav.classList.remove("sticky");
-      });
+      }, { passive: true });
 
       // Lógica de Puntos para Carruseles Horizontales
       document.querySelectorAll(".slider-wrapper").forEach((slider) => {
@@ -602,7 +598,7 @@
             .forEach((dot, index) => {
               dot.classList.toggle("active", index === activeIndex);
             });
-        });
+        }, { passive: true });
       });
 
       // Lógica validada de WhatsApp
